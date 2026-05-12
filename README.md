@@ -1,8 +1,8 @@
-# Security Orchestration, Automation, and Response Engineering
+# deadFlow:killchain - Security Orchestration, Automation, and Response Engineering
 
 By Austin BC
 
-This project is a full defensive security engineering lab that turns raw endpoint activity into an automated SOC response pipeline. It brings together endpoint telemetry, detection logic, alert routing, enrichment, case creation, and analyst notification into one cohesive workflow.
+This project is a full defensive security engineering project that turns raw endpoint activity into an automated SOC response pipeline. It brings together endpoint telemetry, detection logic, alert routing, enrichment, case creation, and analyst notification into one cohesive workflow.
 
 The lab focuses on a realistic blue-team scenario: detecting Mimikatz-like behavior from a Windows endpoint, forwarding the event through Wazuh, enriching the alert through Shuffle and VirusTotal, creating an investigation record in TheHive, and notifying a SOC analyst with the details needed to respond.
 
