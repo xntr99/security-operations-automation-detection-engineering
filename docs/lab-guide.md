@@ -4,6 +4,11 @@ This guide converts the original PDF lab into a GitHub-friendly implementation d
 
 ## 1. Objective
 
+**Visual walkthrough: Project overview**
+
+![Project overview screenshot page 1 image 1](../assets/images/page-01-image-01.png)
+
+
 Build a defensive SOC automation workflow that:
 
 - Collects endpoint telemetry from a Windows 10 client.
@@ -68,15 +73,30 @@ sequenceDiagram
     Shuffle->>Analyst: Send email notification
 ```
 
-![Wazuh alert workflow screenshot](../assets/images/page-47-image-01.jpg)
-
 ## 4. Configure Windows 10 and Sysmon
+
+**Visual walkthrough: Windows 10 and Sysmon setup**
+
+![Windows 10 and Sysmon setup screenshot page 4 image 1](../assets/images/page-04-image-01.png)
+
+![Windows 10 and Sysmon setup screenshot page 5 image 1](../assets/images/page-05-image-01.png)
+
+![Windows 10 and Sysmon setup screenshot page 6 image 1](../assets/images/page-06-image-01.png)
+
+![Windows 10 and Sysmon setup screenshot page 6 image 2](../assets/images/page-06-image-02.png)
+
+![Windows 10 and Sysmon setup screenshot page 7 image 1](../assets/images/page-07-image-01.png)
+
+![Windows 10 and Sysmon setup screenshot page 8 image 1](../assets/images/page-08-image-01.png)
+
+![Windows 10 and Sysmon setup screenshot page 8 image 2](../assets/images/page-08-image-02.png)
+
+![Windows 10 and Sysmon setup screenshot page 9 image 1](../assets/images/page-09-image-01.png)
+
 
 ### 4.1 Install Windows 10
 
 Create a Windows 10 virtual machine in VMware or your preferred hypervisor. This endpoint is the telemetry source for the lab.
-
-![Windows VM setup screenshot](../assets/images/page-04-image-01.png)
 
 ### 4.2 Download Sysmon
 
@@ -92,8 +112,6 @@ sysmonconfig.xml
 
 Place `sysmonconfig.xml` in the extracted Sysmon directory.
 
-![Sysmon download screenshot](../assets/images/page-05-image-01.png)
-
 ### 4.4 Install Sysmon
 
 Open PowerShell as Administrator, move into the Sysmon directory, and run:
@@ -108,15 +126,38 @@ Verify Sysmon through:
 - Event Viewer.
 - `Applications and Services Logs > Microsoft > Windows > Sysmon`.
 
-![Sysmon install screenshot](../assets/images/page-08-image-01.png)
-
 ## 5. Set Up Wazuh
+
+**Visual walkthrough: Wazuh server deployment and access**
+
+![Wazuh server deployment and access screenshot page 10 image 1](../assets/images/page-10-image-01.jpg)
+
+![Wazuh server deployment and access screenshot page 10 image 2](../assets/images/page-10-image-02.png)
+
+![Wazuh server deployment and access screenshot page 11 image 1](../assets/images/page-11-image-01.png)
+
+![Wazuh server deployment and access screenshot page 11 image 2](../assets/images/page-11-image-02.png)
+
+![Wazuh server deployment and access screenshot page 11 image 3](../assets/images/page-11-image-03.png)
+
+![Wazuh server deployment and access screenshot page 12 image 1](../assets/images/page-12-image-01.png)
+
+![Wazuh server deployment and access screenshot page 12 image 2](../assets/images/page-12-image-02.png)
+
+![Wazuh server deployment and access screenshot page 13 image 1](../assets/images/page-13-image-01.png)
+
+![Wazuh server deployment and access screenshot page 14 image 1](../assets/images/page-14-image-01.png)
+
+![Wazuh server deployment and access screenshot page 15 image 1](../assets/images/page-15-image-01.png)
+
+![Wazuh server deployment and access screenshot page 16 image 1](../assets/images/page-16-image-01.png)
+
+![Wazuh server deployment and access screenshot page 16 image 2](../assets/images/page-16-image-02.png)
+
 
 ### 5.1 Create the Wazuh Server
 
 Create an Ubuntu 22.04 server. The original lab uses a DigitalOcean Droplet named `Wazuh`, but another cloud provider or VM is acceptable.
-
-![DigitalOcean Wazuh setup](../assets/images/page-10-image-01.jpg)
 
 ### 5.2 Restrict Firewall Access
 
@@ -127,8 +168,6 @@ Typical access needs:
 - Wazuh dashboard over HTTPS.
 - SSH from your IP.
 - Wazuh agent communication ports according to your Wazuh deployment.
-
-![Wazuh firewall screenshot](../assets/images/page-11-image-02.png)
 
 ### 5.3 Update the Server
 
@@ -164,15 +203,20 @@ https://<WAZUH_PUBLIC_IP>
 
 Because this lab uses a self-signed certificate, your browser may warn you. Proceed only if this is your controlled lab server.
 
-![Wazuh login screenshot](../assets/images/page-16-image-02.png)
-
 ## 6. Install TheHive
+
+**Visual walkthrough: TheHive server installation**
+
+![TheHive server installation screenshot page 17 image 1](../assets/images/page-17-image-01.png)
+
+![TheHive server installation screenshot page 18 image 1](../assets/images/page-18-image-01.png)
+
+![TheHive server installation screenshot page 20 image 1](../assets/images/page-20-image-01.png)
+
 
 ### 6.1 Create the TheHive Server
 
 Create another Ubuntu 22.04 server for TheHive. Apply the firewall rules you created earlier.
-
-![TheHive droplet screenshot](../assets/images/page-17-image-01.png)
 
 ### 6.2 Install Dependencies
 
@@ -236,6 +280,33 @@ Password: secret
 
 ## 7. Configure TheHive Dependencies
 
+**Visual walkthrough: Cassandra, Elasticsearch, and TheHive configuration**
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 21 image 1](../assets/images/page-21-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 22 image 1](../assets/images/page-22-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 22 image 2](../assets/images/page-22-image-02.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 23 image 1](../assets/images/page-23-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 24 image 1](../assets/images/page-24-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 25 image 1](../assets/images/page-25-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 25 image 2](../assets/images/page-25-image-02.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 25 image 3](../assets/images/page-25-image-03.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 26 image 1](../assets/images/page-26-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 27 image 1](../assets/images/page-27-image-01.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 27 image 2](../assets/images/page-27-image-02.png)
+
+![Cassandra, Elasticsearch, and TheHive configuration screenshot page 27 image 3](../assets/images/page-27-image-03.png)
+
+
 ### 7.1 Configure Cassandra
 
 Edit:
@@ -264,8 +335,6 @@ rm -rf /var/lib/cassandra/*
 systemctl start cassandra.service
 systemctl status cassandra.service
 ```
-
-![Cassandra configuration screenshot](../assets/images/page-22-image-01.png)
 
 ### 7.2 Configure Elasticsearch
 
@@ -324,9 +393,22 @@ Open:
 http://<THEHIVE_PUBLIC_IP>:9000/login
 ```
 
-![TheHive login screenshot](../assets/images/page-27-image-03.png)
-
 ## 8. Add the Windows Agent to Wazuh
+
+**Visual walkthrough: Wazuh Windows agent onboarding**
+
+![Wazuh Windows agent onboarding screenshot page 28 image 1](../assets/images/page-28-image-01.png)
+
+![Wazuh Windows agent onboarding screenshot page 29 image 1](../assets/images/page-29-image-01.png)
+
+![Wazuh Windows agent onboarding screenshot page 30 image 1](../assets/images/page-30-image-01.png)
+
+![Wazuh Windows agent onboarding screenshot page 30 image 2](../assets/images/page-30-image-02.png)
+
+![Wazuh Windows agent onboarding screenshot page 31 image 1](../assets/images/page-31-image-01.png)
+
+![Wazuh Windows agent onboarding screenshot page 31 image 2](../assets/images/page-31-image-02.png)
+
 
 In Wazuh:
 
@@ -345,9 +427,18 @@ net start wazuhsvc
 
 Confirm the agent shows as `Active`.
 
-![Wazuh active agent screenshot](../assets/images/page-31-image-01.png)
-
 ## 9. Forward Sysmon Events to Wazuh
+
+**Visual walkthrough: Sysmon forwarding into Wazuh**
+
+![Sysmon forwarding into Wazuh screenshot page 32 image 1](../assets/images/page-32-image-01.png)
+
+![Sysmon forwarding into Wazuh screenshot page 33 image 1](../assets/images/page-33-image-01.png)
+
+![Sysmon forwarding into Wazuh screenshot page 33 image 2](../assets/images/page-33-image-02.png)
+
+![Sysmon forwarding into Wazuh screenshot page 34 image 1](../assets/images/page-34-image-01.png)
+
 
 On the Windows client, edit:
 
@@ -381,15 +472,38 @@ net start wazuhsvc
 
 Verify Sysmon events in Wazuh Events.
 
-![Sysmon forwarding screenshot](../assets/images/page-33-image-01.png)
-
 ## 10. Generate Detection Telemetry
+
+**Visual walkthrough: Telemetry generation and archive validation**
+
+![Telemetry generation and archive validation screenshot page 35 image 1](../assets/images/page-35-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 36 image 1](../assets/images/page-36-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 36 image 2](../assets/images/page-36-image-02.png)
+
+![Telemetry generation and archive validation screenshot page 37 image 1](../assets/images/page-37-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 38 image 1](../assets/images/page-38-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 38 image 2](../assets/images/page-38-image-02.png)
+
+![Telemetry generation and archive validation screenshot page 39 image 1](../assets/images/page-39-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 39 image 2](../assets/images/page-39-image-02.png)
+
+![Telemetry generation and archive validation screenshot page 40 image 1](../assets/images/page-40-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 40 image 2](../assets/images/page-40-image-02.png)
+
+![Telemetry generation and archive validation screenshot page 41 image 1](../assets/images/page-41-image-01.png)
+
+![Telemetry generation and archive validation screenshot page 41 image 2](../assets/images/page-41-image-02.png)
+
 
 ### 10.1 Generate Mimikatz Telemetry
 
 In the controlled Windows lab machine, generate Mimikatz-related telemetry for detection testing. Keep this isolated and avoid using real credentials.
-
-![Mimikatz telemetry screenshot](../assets/images/page-36-image-01.png)
 
 ### 10.2 Enable Wazuh Archive Logging
 
@@ -457,8 +571,6 @@ wazuh-archives-*
 4. Select `timestamp` as the time field.
 5. Use **Discover** to search the new index.
 
-![Archive index screenshot](../assets/images/page-39-image-01.png)
-
 ### 10.5 Search for Mimikatz Events
 
 On the Wazuh manager:
@@ -474,6 +586,27 @@ If no events appear:
 - Relaunch the telemetry generation in the lab endpoint.
 
 ## 11. Create a Custom Wazuh Rule
+
+**Visual walkthrough: Custom Mimikatz detection rule**
+
+![Custom Mimikatz detection rule screenshot page 42 image 1](../assets/images/page-42-image-01.png)
+
+![Custom Mimikatz detection rule screenshot page 42 image 2](../assets/images/page-42-image-02.png)
+
+![Custom Mimikatz detection rule screenshot page 43 image 1](../assets/images/page-43-image-01.png)
+
+![Custom Mimikatz detection rule screenshot page 44 image 1](../assets/images/page-44-image-01.png)
+
+![Custom Mimikatz detection rule screenshot page 45 image 1](../assets/images/page-45-image-01.png)
+
+![Custom Mimikatz detection rule screenshot page 46 image 1](../assets/images/page-46-image-01.png)
+
+![Custom Mimikatz detection rule screenshot page 46 image 2](../assets/images/page-46-image-02.png)
+
+![Custom Mimikatz detection rule screenshot page 47 image 1](../assets/images/page-47-image-01.jpg)
+
+![Custom Mimikatz detection rule screenshot page 47 image 2](../assets/images/page-47-image-02.jpg)
+
 
 The lab uses the Sysmon `originalFileName` field because the executable can be renamed. Matching `originalFileName` still catches activity when the visible filename changes.
 
@@ -504,9 +637,20 @@ systemctl restart wazuh-manager.service
 
 Test by renaming the executable in the Windows lab and regenerating telemetry. The alert should still trigger.
 
-![Custom rule alert screenshot](../assets/images/page-47-image-02.jpg)
-
 ## 12. Send Wazuh Alerts to Shuffle
+
+**Visual walkthrough: Wazuh to Shuffle integration**
+
+![Wazuh to Shuffle integration screenshot page 48 image 1](../assets/images/page-48-image-01.png)
+
+![Wazuh to Shuffle integration screenshot page 48 image 2](../assets/images/page-48-image-02.png)
+
+![Wazuh to Shuffle integration screenshot page 49 image 1](../assets/images/page-49-image-01.png)
+
+![Wazuh to Shuffle integration screenshot page 50 image 1](../assets/images/page-50-image-01.png)
+
+![Wazuh to Shuffle integration screenshot page 50 image 2](../assets/images/page-50-image-02.png)
+
 
 ### 12.1 Create a Shuffle Workflow
 
@@ -517,8 +661,6 @@ In Shuffle:
 3. Add a webhook trigger.
 4. Name it something like `Wazuh-Alerts`.
 5. Copy the webhook URI.
-
-![Shuffle webhook screenshot](../assets/images/page-49-image-01.png)
 
 ### 12.2 Configure Wazuh Integration
 
@@ -551,6 +693,59 @@ Regenerate the lab telemetry and confirm Shuffle receives the alert.
 
 ## 13. Build the Shuffle Workflow
 
+**Visual walkthrough: Shuffle enrichment, TheHive alerting, and email notification**
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 51 image 1](../assets/images/page-51-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 52 image 1](../assets/images/page-52-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 52 image 2](../assets/images/page-52-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 53 image 1](../assets/images/page-53-image-01.jpg)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 53 image 2](../assets/images/page-53-image-02.jpg)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 54 image 1](../assets/images/page-54-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 54 image 2](../assets/images/page-54-image-02.jpg)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 55 image 1](../assets/images/page-55-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 55 image 2](../assets/images/page-55-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 56 image 1](../assets/images/page-56-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 56 image 2](../assets/images/page-56-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 57 image 1](../assets/images/page-57-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 58 image 1](../assets/images/page-58-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 58 image 2](../assets/images/page-58-image-02.jpg)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 60 image 1](../assets/images/page-60-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 61 image 1](../assets/images/page-61-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 61 image 2](../assets/images/page-61-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 62 image 1](../assets/images/page-62-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 62 image 2](../assets/images/page-62-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 63 image 1](../assets/images/page-63-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 64 image 1](../assets/images/page-64-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 64 image 2](../assets/images/page-64-image-02.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 65 image 1](../assets/images/page-65-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 66 image 1](../assets/images/page-66-image-01.png)
+
+![Shuffle enrichment, TheHive alerting, and email notification screenshot page 66 image 2](../assets/images/page-66-image-02.jpg)
+
+
 ### 13.1 Extract the SHA256 Hash
 
 In the Shuffle workflow, change the default action to **Regex capture group**.
@@ -569,8 +764,6 @@ SHA256=([0-9A-Fa-f]{64})
 
 This extracts only the hash value, which is required for a valid VirusTotal query.
 
-![Shuffle regex capture screenshot](../assets/images/page-51-image-01.png)
-
 ### 13.2 Query VirusTotal
 
 1. Create or log in to a VirusTotal account.
@@ -582,8 +775,6 @@ This extracts only the hash value, which is required for a valid VirusTotal quer
 
 A successful query should return HTTP `200`.
 
-![VirusTotal success screenshot](../assets/images/page-55-image-01.png)
-
 ### 13.3 Prepare TheHive
 
 In TheHive:
@@ -594,8 +785,6 @@ In TheHive:
 4. Create a SOAR/integration user for Shuffle.
 5. Generate an API key for the Shuffle integration user.
 6. Store the API key securely.
-
-![TheHive user setup screenshot](../assets/images/page-58-image-01.png)
 
 ### 13.4 Create TheHive Alerts from Shuffle
 
@@ -636,8 +825,6 @@ Example payload:
 
 Save and rerun the workflow. Confirm the alert appears in TheHive.
 
-![TheHive created alert screenshot](../assets/images/page-62-image-01.png)
-
 ### 13.5 Enrich the Alert Details
 
 Use Shuffle's **Show Body** output to identify fields from the Wazuh alert. Add useful details to the TheHive summary, such as:
@@ -648,8 +835,6 @@ Use Shuffle's **Show Body** output to identify fields from the Wazuh alert. Add 
 - Command line.
 - SHA256 hash.
 - VirusTotal detection count.
-
-![TheHive enriched alert screenshot](../assets/images/page-63-image-01.png)
 
 ### 13.6 Send Email Notification
 
@@ -671,8 +856,6 @@ TheHive: <THEHIVE_ALERT_LINK>
 ```
 
 Save and rerun the workflow. Confirm the analyst email is received.
-
-![Email notification screenshot](../assets/images/page-66-image-02.jpg)
 
 ## 14. Validation Checklist
 

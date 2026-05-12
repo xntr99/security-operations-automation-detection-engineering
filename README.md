@@ -17,7 +17,7 @@ The lab focuses on a realistic blue-team scenario: detecting Mimikatz-like behav
 | [`docs/troubleshooting.md`](docs/troubleshooting.md) | Common Wazuh, Shuffle, TheHive, and telemetry issues. |
 | [`docs/image-gallery.md`](docs/image-gallery.md) | Full visual walkthrough with extracted screenshots. |
 | [`docs/image-manifest.md`](docs/image-manifest.md) | Screenshot extraction manifest. |
-| [`assets/images/`](assets/images/) | Extracted and redacted lab screenshots. |
+| [`assets/images/`](assets/images/) | Extracted lab screenshots used throughout the guide. |
 | [`tools/extract_pdf_assets.py`](tools/extract_pdf_assets.py) | Helper script for extracting PDF text and images. |
 
 ## Topology
