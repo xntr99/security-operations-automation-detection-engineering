@@ -6,9 +6,6 @@ This guide converts the original PDF lab into a GitHub-friendly implementation d
 
 **Visual walkthrough: Project overview**
 
-![Project overview screenshot page 1 image 1](../assets/images/page-01-image-01.png)
-
-
 Build a defensive SOC automation workflow that:
 
 - Collects endpoint telemetry from a Windows 10 client.
