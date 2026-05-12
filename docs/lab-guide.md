@@ -1,4 +1,4 @@
-# Security Operations Automation & Detection Engineering Guide
+# Security Orchestration, Automation, and Response Engineering Guide
 
 This guide converts the original PDF lab into a GitHub-friendly implementation document. It keeps the same technical flow while making commands, configuration, screenshots, and decision points easier to follow.
 
