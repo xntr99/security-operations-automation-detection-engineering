@@ -8,6 +8,18 @@ The lab focuses on a realistic blue-team scenario: detecting Mimikatz-like behav
 
 > Lab safety: Run this only in an isolated environment that you own and control. The Mimikatz activity in this project is used strictly as detection telemetry.
 
+## Repository Layout
+
+| Path | Purpose |
+|---|---|
+| [`docs/lab-guide.md`](docs/lab-guide.md) | Complete implementation guide. |
+| [`docs/security-notes.md`](docs/security-notes.md) | Safety scope, secret handling, and exposure notes. |
+| [`docs/troubleshooting.md`](docs/troubleshooting.md) | Common Wazuh, Shuffle, TheHive, and telemetry issues. |
+| [`docs/image-gallery.md`](docs/image-gallery.md) | Full visual walkthrough with extracted screenshots. |
+| [`docs/image-manifest.md`](docs/image-manifest.md) | Screenshot extraction manifest. |
+| [`assets/images/`](assets/images/) | Extracted and redacted lab screenshots. |
+| [`tools/extract_pdf_assets.py`](tools/extract_pdf_assets.py) | Helper script for extracting PDF text and images. |
+
 ## Topology
 
 ![Security operations automation topology](assets/topology.svg)
@@ -49,18 +61,6 @@ The core detection is intentionally built around `originalFileName` instead of o
 6. VirusTotal enriches the hash with reputation data.
 7. Shuffle creates a structured alert in TheHive.
 8. The analyst receives an email notification with investigation context.
-
-## Repository Layout
-
-| Path | Purpose |
-|---|---|
-| [`docs/lab-guide.md`](docs/lab-guide.md) | Complete implementation guide. |
-| [`docs/security-notes.md`](docs/security-notes.md) | Safety scope, secret handling, and exposure notes. |
-| [`docs/troubleshooting.md`](docs/troubleshooting.md) | Common Wazuh, Shuffle, TheHive, and telemetry issues. |
-| [`docs/image-gallery.md`](docs/image-gallery.md) | Full visual walkthrough with extracted screenshots. |
-| [`docs/image-manifest.md`](docs/image-manifest.md) | Screenshot extraction manifest. |
-| [`assets/images/`](assets/images/) | Extracted and redacted lab screenshots. |
-| [`tools/extract_pdf_assets.py`](tools/extract_pdf_assets.py) | Helper script for extracting PDF text and images. |
 
 ## Why It Matters
 
