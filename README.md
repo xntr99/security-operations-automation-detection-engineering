@@ -1,4 +1,4 @@
-# deadFlow:killchain - Security Orchestration, Automation, and Response Engineering
+# deadFlow:killchain - SOAR Engineering
 
 By Austin BC
 
